@@ -139,4 +139,3 @@ function spx_add_shipping_method( $methods ) {
     $methods['spx_shipping'] = 'SPX_Shipping_Method';
     return $methods;
 }
-require_once plugin_dir_path( __FILE__ ) . 'updater.php';
