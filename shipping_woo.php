@@ -4,13 +4,11 @@ Plugin Name: Shopee Xpress Shipping Integration for WooCommerce
 Description: Tích hợp dịch vụ vận chuyển Shopee Xpress với WooCommerce.
 Version: 1.0
 Author: NitabSoft
-Author URI: https://www.nitabsoft.com/
 License: GPL2
 */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-// Load class khi WooCommerce khởi tạo shipping
 add_action( 'woocommerce_shipping_init', 'spx_shipping_method_class' );
 function spx_shipping_method_class() {
     class SPX_Shipping_Method extends WC_Shipping_Method {
@@ -135,9 +133,20 @@ function spx_shipping_method_class() {
     }
 }
 
-// Thêm phương thức vào WooCommerce
 add_filter( 'woocommerce_shipping_methods', 'spx_add_shipping_method' );
 function spx_add_shipping_method( $methods ) {
     $methods['spx_shipping'] = 'SPX_Shipping_Method';
     return $methods;
 }
+
+require plugin_dir_path( __FILE__ ) . 'plugin-update-checker/plugin-update-checker.php';
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$updateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/your-github-username/shopee-xpress-shipping/',
+    __FILE__,
+    'shopee-xpress-shipping'
+);
+
+$updateChecker->setBranch('main');
