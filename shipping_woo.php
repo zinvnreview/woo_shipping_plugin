@@ -2,7 +2,7 @@
 /*
 Plugin Name: Shopee Xpress Shipping Integration for WooCommerce
 Description: Tích hợp dịch vụ vận chuyển Shopee Xpress với WooCommerce.
-Version: 1.0
+Version: 0.0.1xs
 Author: NitabSoft
 License: GPL2
 */
