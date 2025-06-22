@@ -10,7 +10,7 @@ use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 $updateChecker = PucFactory::buildUpdateChecker(
     'https://github.com/zinvnreview/woo_shipping_plugin', 
     __FILE__, 
-    'shopee-xpress-shipping'
+    'woo_shipping_plugin'
 );
 
 $updateChecker->setBranch('main');
