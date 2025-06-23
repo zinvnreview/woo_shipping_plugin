@@ -3,7 +3,7 @@
 Plugin Name: Shopee Xpress Shipping
 Plugin URI: https://github.com/zinvnreview/woo_shipping_plugin
 Description: Tích hợp dịch vụ vận chuyển Shopee Xpress với WooCommerce.
-Version: 0.0.1
+Version: 0.0.2
 Author: ™βụτ & ʑɨɲ
 Author URI: https://github.com/zinvnreview/woo_shipping_plugin
 License: GPL2
@@ -151,5 +151,5 @@ function spx_shipping_update() {
     'shipping_woo',
 );
 
-$Update_plugin->setBranch('main')
+$Update_plugin->setBranch('main');
 }
