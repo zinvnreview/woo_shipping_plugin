@@ -9,6 +9,8 @@ Author URI: https://github.com/zinvnreview/woo_shipping_plugin
 License: GPL2
 */
 
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 add_action( 'woocommerce_shipping_init', 'spx_shipping_method_class' );
@@ -139,4 +141,15 @@ add_filter( 'woocommerce_shipping_methods', 'spx_add_shipping_method' );
 function spx_add_shipping_method( $methods ) {
     $methods['spx_shipping'] = 'SPX_Shipping_Method';
     return $methods;
+}
+
+function spx_shipping_update() {
+    require_once plugin_dir_path( __FILE__ ) . 'upldate-plugin/plugin-update-checker.php';
+    $updateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/zinvnreview/woo_shipping_plugin',
+    __FILE__,
+    'shipping_woo',
+);
+
+$updateChecker->setBranch('main')
 }
