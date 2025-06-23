@@ -145,11 +145,11 @@ function spx_add_shipping_method( $methods ) {
 
 function spx_shipping_update() {
     require_once plugin_dir_path( __FILE__ ) . 'upldate-plugin/plugin-update-checker.php';
-    $updateChecker = PucFactory::buildUpdateChecker(
+    $Update_plugin = PucFactory::buildUpdateChecker(
     'https://github.com/zinvnreview/woo_shipping_plugin',
     __FILE__,
     'shipping_woo',
 );
 
-$updateChecker->setBranch('main')
+$Update_plugin->setBranch('main')
 }
