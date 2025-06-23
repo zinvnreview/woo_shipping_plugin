@@ -152,5 +152,5 @@ function spx_shipping_update() {
 );
 
 $Update_plugin->setBranch('main');
-add_action( 'init', 'spx_shipping_update' );
 }
+add_action( 'init', 'spx_shipping_update' );
